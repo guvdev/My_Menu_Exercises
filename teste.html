@@ -32,13 +32,14 @@
 
   <script>
     const input = document.querySelector('input');
-    const button = document.querySelector('button');
     const display = document.querySelector('h2');
 
-    button.addEventListener('click', () => {
+    const click = addEventListener('click', () => {
+      const button = document.querySelector('button');
       const userInput = input.value;
       display.textContent = `Você digitou: ${userInput}`;
     });
+    
   </script>
 
 </html>

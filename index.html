@@ -14,32 +14,37 @@
         <nav>
           <ul class="flex space-x-8 items-center text-white">
             <div class="text-2xl font-bold">ExsLG</div>
-            <li><a href="ex/teste.html" class="font-medium tab" data-tab="ex1">Um teste</a></li>
+            <li>
+              <a href="teste.html" class="font-medium tab" data-tab="ex1">Um teste</a>
+            </li>
             <li><a href="" class="font-medium tab" data-tab="ex2">Ex2</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main class="flex flex-col text-center items-center justify-center py-16 space-y-4 h-[90vh]">
+    <main
+      class="flex flex-col text-center items-center justify-center py-16 space-y-4 h-[90vh]"
+    >
       <h1 class="text-white font-bold text-4xl">Selecione um exercício acima</h1>
-      <h2 class="text-white font-medium text-4xl">Horário atual: <span class="text-blue-500 font-bold horario"></span></h2>
+      <h2 class="text-white font-medium text-4xl">
+        Horário atual: <span class="text-blue-500 font-bold horario"></span>
+      </h2>
     </main>
-
   </body>
 
   <script>
-    const horarioElement = document.querySelector('.horario');
 
-    function atualizarHorario() {
+    const fhorario = () => {
+      const horarioElement = document.querySelector(".horario");
       const agora = new Date();
-      const horas = String(agora.getHours()).padStart(2, '0');
-      const minutos = String(agora.getMinutes()).padStart(2, '0');
-      const segundos = String(agora.getSeconds()).padStart(2, '0');
+      const horas = String(agora.getHours()).padStart(2, "0");
+      const minutos = String(agora.getMinutes()).padStart(2, "0");
+      const segundos = String(agora.getSeconds()).padStart(2, "0");
       horarioElement.textContent = `${horas}:${minutos}:${segundos}`;
-    }
+    };
+    setInterval(fhorario, 1000);
+    fhorario();
 
-    setInterval(atualizarHorario, 1000);
-    atualizarHorario();
   </script>
 </html>
